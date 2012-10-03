@@ -129,10 +129,20 @@
       return Math.sqrt(this.variance());
     },
 
+    swap: function(i,j){
+      var k = this[i];
+      this[i] = this[j];
+      this[j] = k;
+      return this;
+    },
+
+    // http://en.wikipedia.org/wiki/Fisher-Yates_shuffle
     shuffle: function(){
-      return this.sort(function(){
-        return 0.5 - Math.random();
-      });
+      for(var i=this.length-1; i>0; i--){
+        j = i.random().floor();
+        this.swap(i,j);
+      }
+      return this
     },
 
     each: function(fn){
@@ -159,6 +169,10 @@
 
 
   _augment(Number, {
+
+    random: function(){
+      return Math.random() * this;
+    },
 
     abs: function(){
       return Math.abs(this);
