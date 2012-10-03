@@ -7,11 +7,11 @@ Provides you with much needed support.
 Inspired by Prototype.js
 Incorporating code and ideas from https:github.com/stewdio/skip
 
-Author:  Craig Russell
-Web:     craig-russell.co.uk
-Email:   craig@craig-russell.co.uk
-Twitter: @craig552uk
-GitHub:  github.com/craig552uk
+ -  Author:  Craig Russell
+ -  Web:     craig-russell.co.uk
+ -  Email:   craig@craig-russell.co.uk
+ -  Twitter: @craig552uk
+ -  GitHub:  github.com/craig552uk
 
 
 Copyright (C) 2012, Craig Russell.
