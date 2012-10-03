@@ -288,6 +288,14 @@
       return this.split('').reverse().join('');
     },
 
+    strip: function(chars){
+      var str = this.valueOf();
+      chars.split('').each(function(c){
+        str = str.replace(new RegExp('\\'+c,'g'), '');
+      });
+      return str;
+    },
+
     isEmpty: function(){
       return (this.length === 0) ? true : false;
     },
