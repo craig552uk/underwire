@@ -281,7 +281,7 @@
     },
 
     toUnderscore: function(){
-      return this.trim().replace(/\s/g, '_');
+      return this.trim().replace(/\s+/g,' ').replace(/\s/g, '_');
     },
 
     reverse: function(){
@@ -294,6 +294,10 @@
         str = str.replace(new RegExp('\\'+c,'g'), '');
       });
       return str;
+    },
+
+    stripNonAlphaNumeric: function(){
+      return this.replace(/[^0-9a-zA-Z ]/g, '');
     },
 
     isEmpty: function(){
