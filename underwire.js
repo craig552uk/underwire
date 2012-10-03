@@ -137,15 +137,15 @@
 
     each: function(fn){
       for(var i=0; i<this.length; i++){
-        fn.call(this, i, this[i]);
+        fn.call(this, this[i], i);
       }
       return this;
     },
 
     map: function(fn){
       var a =[]
-      this.each(function(i, e){
-        a.push(fn.call(this, i, e));
+      this.each(function(e, i){
+        a[i] = fn.call(this, e, i);
       });
       return a;
     },
