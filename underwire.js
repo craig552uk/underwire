@@ -297,13 +297,22 @@
     },
 
     encodeURL: function(){
-      return encodeURI(this);
+      return escape(this);
     },
+
     decodeURL: function(){
-      return decodeURI(this);
+      return unescape(this);
     },
-    encodeHTML: function(){}, //TODO
-    decodeHTML: function(){}
+
+    encodeHTML: function(){
+      return this.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                 .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    },
+
+    decodeHTML: function(){
+      return this.replace(/&quot;/g, '"').replace(/&gt;/g, '>')
+                 .replace(/&lt;/g, '<').replace(/&amp;/g, '&');
+    }
   });
 
 
