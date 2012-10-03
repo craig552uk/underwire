@@ -4,8 +4,8 @@
 //
 //  Provides you with much needed support.
 //
+//  Inspired by Prototype.js
 //  Incorporating code and ideas from https://github.com/stewdio/skip
-//
 //
 //  Author:  Craig Russell
 //  Web:     craig-russell.co.uk
@@ -151,11 +151,9 @@
     },
 
     reverse: function(){
-      var a = [];
-      for(var i=this.length-1; i>=0; i--){
-        a.push(this[i]);
-      }
-      return a;
+      return this.map(function(e,i){
+        return this[this.length-i-1];
+      })
     }
   });
 
@@ -328,7 +326,7 @@
       r = new RegExp('(^| )'+id+'( |$)');
       e = document.getElementsByTagName("*");
       for (i=0; i<e.length; i++){
-        if (r.test(e[i].className)){ a.push(e[i]); }
+        if (r.test(e[i].className)){ a[i] = e[i]; }
       }
       return a;
     }
