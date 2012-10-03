@@ -107,7 +107,7 @@
 
     sum: function(){
       var n=0;
-      this.each(function(_,e){
+      this.each(function(e){
         n += e;
       });
       return n;
@@ -119,7 +119,7 @@
 
     variance: function(){
       var n = 0, mean = this.mean();
-      this.each(function(_,e){
+      this.each(function(e){
         n += (e-mean).pow(2)
       });
       return n / this.length;
@@ -275,7 +275,7 @@
     },
 
     toCamelCase: function(){
-      return this.split(' ').map(function(_, e){
+      return this.split(' ').map(function(e){
         return e.capitalise();
       }).join(' ');
     },
